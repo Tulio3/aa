@@ -1,0 +1,188 @@
+\documentclass{article}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+
+\begin{document}
+
+\title{Tarea 1\\
+	\large Algoritmos}
+\author{Tulio Muñoz Magaña}
+\today
+\maketitle
+
+
+Plantemientos particulares y soluciones:\\
+
+1.- De los artículos producidos diariamiente por cierta fábrica, $40\%$ proviene de la línea I y el $60\%$ de la línea II. El porcentaje de defectuosos de la I es $8\%$, mientras el porcentaje de defectuosos de la línea II es $10\%$. Se escoge un artículo al azar de la producción diaria; ¿Cuál es la probabilidad de que no sea defectuoso?\\
+
+R: Lo que hacemos primero es transformar a probabilidades los porcentajes, esto lo hacemos dividiendo entre $100$ todos los porcentajes. De esta forma nos quedan respectivamente: $0.4$, $0.6$, $0.08$ y $0.1$. Ahora, como hay $0.08$ de probabilidad de que salga defectuoso en la línea I y  $0.4$ de probabilidad de que venga de la línea I, hay $0.4*0.08$ de probabilidad de que venga defectuoso de la línea I, análogamente de la línea II, por lo que la probabilidad de que salga defectuoso en general es $0.4*0.08 + 0.6*0.1 = 0.092$. Por lo que la probabilidad de que no esté defectuoso es $1-0.092 = 0.908$. Esto traducido a porcentaje es $90.8\%$\\
+
+2.- La probabilidad de que un enfermo se recupere de un padecimiento gástrico es $0.8$. Suponga que se enfermaron 40 personas.\\
+(a) Cuál es la probabilidad de que sobrevivan exactamente $14$\\
+(b) Cuál es la probabilidad de que al menos sobrevivan $10$\\
+(c) Cuál es la probabilidad de que sobrevivan al menos $14$, pero no más de $18$\\
+(d) Cuál es la probabilidad de que sobrevivan a lo más $16$\\
+
+R: (a) Utilizamos la distribución binomial. La probabilidad de que se recuperen exactamente $14$ es ${40}\choose{14} $$(0.8)^{14}(0.2)^{26}$. Ese número es $0.00000000068495$.\\
+
+(b) Si queremos calcular la probabilidad de que al menos sobrevivan $10$, tenemos que calcular la probabilidad de que sobrevivan $10$, $11$, ... hasta $40$. Para eso realizamos la suma de tales probabilidades. Es decir $ \sum\limits_{i=10}^{40}$ ${40}\choose{i}$$(0.8)^{i}(0.2)^{40-i}$. es número es $0.99999999999999$.\\
+
+(c) Realizamos la suma de las probabilidades desde $14$ hasta $18$. $ \sum\limits_{i=14}^{18}$ ${40}\choose{i}$$(0.8)^{i}(0.2)^{40-i}$. Ese número es $ 0.00000105940 
+$.\\
+
+(d) Realizamos la suma de las probabilidades desde $0$ hasta $16$. $ \sum\limits_{i=0}^{16}$ ${40}\choose{i}$$(0.8)^{i}(0.2)^{40-i}$. Ese número es $0.00000003521525$.\\
+
+3.- Una fuerza de $100$ N actúa sobre un cuerpo de masa $20$ kg que se desplaza a lo largo de un plano horizontal en la misma dirección del movimiento. Sie el cuerpo se desplaza $20$ m y $\mu = 0.2$. Calcular:\\
+(a) Trabajo realizado por dicha fuerza\\
+(b) Trabajo realizado por la normal\\
+(c) Trabajo realizado por la fuerza de rozamiento\\
+(d) Trabajo realizado por el peso\\
+(e) Trabajo total realizado\\
+
+R: (a) Calcularemos primero la fuerza de fricción, $f_{c} = \mu n$, en este caso la normal es igual al peso porque es un plano horizontal, el peso es $9.81*20 = 196.2 N$. Por lo que la fuerza de fricción es $f_{c} = 0.2*196.2 = 39.24 N$. El trabajo realizado por la fuerza principal es el producto de la fuerza por e desplazamiento, es decir, $T = 100*20=2000 J$ .\\
+
+(b) El trabajo de la normal en este caso es $0$ porque el desplazamiento es ortogonal a esta fuerza.\\
+
+(c)Ya sabemos que $f_{c} = 39.24 N$, ademásel desplazamiento es contrario a esta fuerza, por lo que $T = 39.24*-20 = -784.8 J$\\
+
+(d) Al peso le pasa lo mismo que a la normal, su trabajo es $0$.\\
+
+(e) El trabajo total es la suma de los trabajos, en este caso es $T_{t} = 2000 - 784.8 = 1215.2 J$.\\
+
+4.- En el origen de coordenadas hay una carga eléctrica $q1 = +4 nC$ y en el punto $A(6,0)$ otra carga eléctrica $q2 = +1 nC$. Calcula el punto donde se anula el campo eléctrico.\\
+
+R: Definimos a $d$ como la distancia entre las cargas, en este caso es $6$. Ahora llamamos $x$ a la distancia de $q1$ al punto donde se anulan las cargas, esto implica que la distancia de este punto a $q2$ es $6-x$. Sabemos que entonces el punto donde se anula el campo está descrito or la ecuación \[ \frac{4}{x^2} = \frac{1}{(6-x)^2}\] Sabemos además que $6-x$ es positivo, por lo que podemos sacar raíces de ambos lados y nos queda:  \[ \frac{2}{x} = \frac{1}{6-x}\] de aquí que \[ 12 - 2x = x \] \[x = 4\] Por lo que el punto que buscamos es $(4,0)$. \\
+
+5.- Calcula los coeficientes del polinomio que resulta de multiplicar\\
+(a) $(3x-10)(x3+10)$\\
+(b) $(2x-11)(x-30)$\\
+(c) $(1.5x+1)x$\\
+
+R: (a) Multiplicando: $9x^2 - 100$, los coeficientes son: $9, 0, 100$.\\
+
+(b) $2x^2 -11x -60x+ 330 = 2x^2 - 71x + 330$. Los coeficientes son $2, -71, 330$.\\
+
+(c) $1.5x^2 + x$. Los coeficientes son $1.5, 1, 0$.\\ 
+
+6.- Un automóvil, sale del punto $(2,3)$ y va en línea recta a una velocidad de $70 km/h$ en la dirección del vector $(10,1.5)$. Otro automóvil sale del punto $(6,1)$ en línea recta a una velocidad de $20 km/h$ en la dirección del vector $(5,-3)$. En qué punto sus trayectorias se intersectan. \\
+
+R: Con los vectores podemos deducir la pendiente de la recta que describen los automóviles dividiendo la ordenada sobre la abcisa. Por lo que la pendiente de la recta que describe el primer automóvil es $1.5/10 = .15$. La del segundo es $-3/5$. Como sabemos el punto del que parten, con el punto y la pendiente podemos calcular la ecuación de la recta. A continuación las ecuaciones de las rectas que describen el primero y el segundo automóviles respectivamente. \[ y - 3 = .15 (x - 2)\] \[ y - 1 = \frac{-3}{5} (x-6) \] Resolviendo ese sistema de ecuaciones encontraremos el punto común a ambas trayectorias.\\
+
+La solución del sistema es $x = 2.533$, $y = 3.08$. Luego el punto de intersección de las trayectorias es (2.533, 3.08).\\\\
+
+
+
+
+
+
+
+Plantemientos generales y soluciones:\\
+
+1.- De los artículos producidos diariamiente por cierta fábrica, $q1 \%$ proviene de la línea I y el $q2 \%$ de la línea II. El porcentaje de defectuosos de la I es $p1 \%$, mientras el porcentaje de defectuosos de la línea II es $p2 \%$. Se escoge un artículo al azar de la producción diaria; ¿Cuál es la probabilidad de que no sea defectuoso?\\
+
+R: Lo que hacemos primero es transformar a probabilidades los porcentajes, esto lo hacemos dividiendo entre $100$ todos los porcentajes. De esta forma nos quedan respectivamente: $\frac{q1}{100}$, $\frac{q2}{100}$, $\frac{p1}{100}$ y $\frac{p2}{100}$. Ahora, como hay $\frac{p1}{100}$ de probabilidad de que salga defectuoso en la línea I y  $\frac{q1}{100}$ de probabilidad de que venga de la línea I, hay $\frac{p1}{100}*\frac{q1}{100}$ de probabilidad de que venga defectuoso de la línea I, análogamente de la línea II, por lo que la probabilidad de que salga defectuoso en general es $\frac{p1}{100}*\frac{q1}{100} + \frac{q2}{100}*\frac{p2}{100} = a$. Por lo que la probabilidad de que no esté defectuoso es $1-a = b$. Esto traducido a porcentaje es $b*100\%$\\
+
+2.- La probabilidad de que un enfermo se recupere de un padecimiento gástrico es $p$. Suponga que se enfermaron $n$ personas.\\
+(a) Cuál es la probabilidad de que sobrevivan exactamente $a$\\
+(b) Cuál es la probabilidad de que al menos sobrevivan $b$\\
+(c) Cuál es la probabilidad de que sobrevivan al menos $c1$, pero no más de $c2$\\
+(d) Cuál es la probabilidad de que sobrevivan a lo más $d$\\
+
+R: (a) Utilizamos la distribución binomial. La probabilidad de que se recuperen exactamente $a$ es ${n}\choose{a} $$(p)^{a}(1-p)^{n-a}$. Computamos ese número y lo imprimimos. \\
+
+(b) Si queremos calcular la probabilidad de que al menos sobrevivan $b$, tenemos que calcular la probabilidad de que sobrevivan $b$, $b+1$, ... hasta $n$. Para eso realizamos la suma de tales probabilidades en forma de bucle y al final imprimimos el resultado final. \\
+
+(c) Realizamos la suma de las probabilidades desde $c1$ hasta $c2$, de igual forma lo hacemos en un bucle e imprimimos.\\
+
+(d) Realizamos la suma de las probabilidades desde $0$ hasta $d$ en bucle también e imprimimos. \\
+
+3.- Una fuerza de $F$ N actúa sobre un cuerpo de masa $m$ kg que se desplaza a lo largo de un plano horizontal en la misma dirección del movimiento. Sie el cuerpo se desplaza $d$ m y $\mu = mu$. Calcular:\\
+(a) Trabajo realizado por dicha fuerza\\
+(b) Trabajo realizado por la normal\\
+(c) Trabajo realizado por la fuerza de rozamiento\\
+(d) Trabajo realizado por el peso\\
+(e) Trabajo total realizado\\
+
+R: (a) Calcularemos primero la fuerza de fricción, $f_{c} = \mu n$, en este caso la normal es igual al peso porque es un plano horizontal, el peso es $9.81*m = W$. Por lo que la fuerza de fricción es $f_{c} = mu*W$. El trabajo realizado por la fuerza principal es el producto de la fuerza por e desplazamiento, es decir, $T1 = F*m J$ .\\
+
+(b) El trabajo de la normal en este caso es $0$ porque el desplazamiento es ortogonal a esta fuerza.\\
+
+(c)Ya conocemos $f_{c}$. Además el desplazamiento es contrario a esta fuerza, por lo que $T2 = f_{c}*-d J$\\
+
+(d) Al peso le pasa lo mismo que a la normal, su trabajo es $0$.\\
+
+(e) El trabajo total es la suma de los trabajos, en este caso es $T = T1 + T2 J$.\\
+
+4.- En un punto $P(x1,y1)$ en el plano hay una carga eléctrica $q1 = +a nC$ y en otro punto $A(x2,y2)$ otra carga eléctrica $q2 = +b nC$. Calcula el punto donde se anula el campo eléctrico.\\
+
+R: Definimos a $d$ como la distancia entre las cargas. Sabemos que \[ d = \sqrt{(x2-x2)^2 + (y2-y1)^2} \]. Ahora llamamos $x$ a la distancia de $q1$ al punto donde se anulan las cargas, esto implica que la distancia de este punto a $q2$ es $d - x$. Sabemos que entonces el punto donde se anula el campo está descrito or la ecuación \[ \frac{a}{x^2} = \frac{b}{(d-x)^2}\] Sabemos además que $d-x$ es positivo porque el punto está entre $P$ y $A$, por lo que podemos sacar raíces de ambos lados y nos queda:  \[ \frac{\sqrt{a}}{x} = \frac{\sqrt{b}}{d-x}\] de aquí que \[ d*\sqrt{a} - \sqrt{a}x = \sqrt{b}x \] \[x = \frac{d*\sqrt{a}}{\sqrt{a}+\sqrt{b}}\] Ahora que sabemos $x$, si los puntos están en una recta horizontal y $x2 > x1$. El punto es $(x1+x, y1)$, si $x2 < x1$, el punto es $(x1-x.y1)$. Si no están los puntos en una recta horizontal, usamos la semejanza de triángulos que se forma, sean (v,w) ls coordenadas del punto que buscamos. Por la semejanza \[ \frac{|v-x1|}{|x2-x1|} = \frac{x}{d} \] De donde podemos extraer v1. Análogamente, también por la semejanza tenemos que \[ \frac{|w-y1|}{|y2-y1|} = \frac{x}{d} \] De donde podemos extraer w. Así, el punto que buscamos es $(v,w)$. \\
+
+5.- Calcula los coeficientes del polinomio que resulta de multiplicar:\\
+(a) $(3x-10)(x3+10)$\\
+(b) $(2x-11)(x-30)$\\
+(c) $(1.5x+1)x$\\
+
+R: (a) Multiplicando: $9x^2 - 100$, los coeficientes son: $9, 0, 100$.\\
+
+(b) $2x^2 -11x -60x+ 330 = 2x^2 - 71x + 330$. Los coeficientes son $2, -71, 330$.\\
+
+(c) $1.5x^2 + x$. Los coeficientes son $1.5, 1, 0$.\\ 
+
+6.- Un automóvil, sale del punto $(a1,a2)$ y va en línea recta a una velocidad de $70 km/h$ en la dirección del vector $(v1,v2)$. Otro automóvil sale del punto $(b1,b2)$ en línea recta a una velocidad de $20 km/h$ en la dirección del vector $(w1,w2)$. En qué punto sus trayectorias se intersectan. \\
+
+R: Con los vectores podemos deducir la pendiente de la recta que describen los automóviles dividiendo la ordenada sobre la abcisa. Por lo que la pendiente de la recta que describe el primer automóvil es $m1 = v2/v1$. La del segundo es $m2 = w2/w1$. Como sabemos el punto del que parten, con el punto y la pendiente podemos calcular la ecuación de la recta. A continuación las ecuaciones de las rectas que describen el primero y el segundo automóviles respectivamente. \[ y - a2 = m1(x - a1)\] \[ y - b2 = m2 (x-b1) \] Resolviendo ese sistema de ecuaciones encontraremos el punto común a ambas trayectorias.\\
+
+La solución del sistema es \[x = \frac{m2*b1+a2-b2-m1*a1}{m2-m1}\] \[y = m1*x-m1*a1+a2\]. Luego el punto de intersección de las trayectorias es (x, y), con los valores obtenidos.\\\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
